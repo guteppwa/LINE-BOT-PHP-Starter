@@ -45,7 +45,7 @@ if (!is_null($events['events'])) {
 				else {
 					$messages = [
 						'type' => 'text',
-						'text' => 'LED1=OFF'
+						'text' => 'LED1=ON'
 				];
 				}	
 			}
