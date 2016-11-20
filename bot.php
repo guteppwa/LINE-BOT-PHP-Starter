@@ -15,24 +15,44 @@ if (!is_null($events['events'])) {
 			$text = $event['message']['text'];
 			// Get replyToken
 			$replyToken = $event['replyToken'];
+			
+			//status_led
+			$status_led = 0;
 
 			// Build message to reply back
 			if($text=='ON'){
+				$status_led = 0;
 				$messages = [
 					'type' => 'text',
 					'text' => 'LED1=ON'
 				];
 			}
 			else if($text=='OFF'){
+				$status_led = 1;
 				$messages = [
 					'type' => 'text',
 					'text' => 'LED1=OFF'
 				];
 			}
+			else if($text=='STATUS'){
+				$status_led = $status_led;
+				if ($status_led=0){
+					$messages = [
+						'type' => 'text',
+						'text' => 'LED1=OFF'
+				];
+				}
+				else {
+					$messages = [
+						'type' => 'text',
+						'text' => 'LED1=OFF'
+				];
+				}	
+			}
 			else {
 				$messages = [
-					'type' => 'text',
-					'text' => 'Hello?'
+						'type' => 'text',
+						'text' => 'Please ENTER "ON" or "OF" or "STATUS"'
 				];
 			}
 				
