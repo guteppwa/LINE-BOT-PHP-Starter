@@ -21,14 +21,14 @@ if (!is_null($events['events'])) {
 
 			// Build message to reply back
 			if($text=='ON'){
-				$status_led = 0;
+				$status_led = 1;
 				$messages = [
 					'type' => 'text',
 					'text' => 'LED1=ON'
 				];
 			}
 			else if($text=='OFF'){
-				$status_led = 1;
+				$status_led = 0;
 				$messages = [
 					'type' => 'text',
 					'text' => 'LED1=OFF'
@@ -52,7 +52,7 @@ if (!is_null($events['events'])) {
 			else {
 				$messages = [
 						'type' => 'text',
-						'text' => 'Please ENTER "ON" or "OF" or "STATUS"'
+						'text' => 'Please ENTER "ON" or "OFF" or "STATUS"'
 				];
 			}
 				
