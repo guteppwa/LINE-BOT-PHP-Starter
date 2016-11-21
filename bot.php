@@ -17,7 +17,6 @@ if (!is_null($events['events'])) {
 			$replyToken = $event['replyToken'];
 			
 			//status_led
-			$status_led = 0;
 
 			// Build message to reply back
 			if($text=='ON'){
