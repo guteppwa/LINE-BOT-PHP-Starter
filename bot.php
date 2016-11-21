@@ -15,7 +15,7 @@ if (!is_null($events['events'])) {
 			$text = $event['message']['text'];
 			// Get replyToken
 			$replyToken = $event['replyToken'];
-			
+
 			//status_led
 
 			// Build message to reply back
@@ -24,31 +24,22 @@ if (!is_null($events['events'])) {
 				$messages = [
 					'type' => 'LED1=ON'
 				];
+				if($text=='STATUS'){
+					$messages = [
+						'type' => 'STATUS_LED =' . $status_led
+					];
+				}
 			}
 			else if($text=='OFF'){
 				$status_led = 0;
 				$messages = [
-					'type' => 'text',
-					'text' => 'LED1=OFF'
+					'type' => 'LED1=OFF'
 				];
-			}
-			else if($text=='STATUS'){
-				/*if ($status_led=='1'){
+				if($text=='STATUS'){
 					$messages = [
-						'type' => 'text',
-						'text' => 'LED1=ON'
-				];
+						'type' => 'STATUS_LED =' . $status_led
+					];
 				}
-				else {
-					$messages = [
-						'type' => 'text',
-						'text' => 'LED1=OFF'
-				];
-				}	*/
-				$messages = [
-					'type' => 'text',
-					'text' => 'STATUS LED ='.$status_led
-				];
 			}
 			else {
 				$messages = [
@@ -56,7 +47,7 @@ if (!is_null($events['events'])) {
 						'text' => 'Please ENTER "ON" or "OFF" or "STATUS"'
 				];
 			}
-				
+
 			// Make a POST Request to Messaging API to reply to sender
 			$url = 'https://api.line.me/v2/bot/message/reply';
 			$data = [
