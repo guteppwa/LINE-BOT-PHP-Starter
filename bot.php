@@ -35,7 +35,6 @@ if (!is_null($events['events'])) {
 				];
 			}
 			else if($text=='STATUS'){
-				$status_led = $status_led;
 				if ($status_led=0){
 					$messages = [
 						'type' => 'text',
