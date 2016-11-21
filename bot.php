@@ -35,7 +35,7 @@ if (!is_null($events['events'])) {
 				];
 			}
 			else if($text=='STATUS'){
-				if ($status_led=='1'){
+				/*if ($status_led=='1'){
 					$messages = [
 						'type' => 'text',
 						'text' => 'LED1=ON'
@@ -46,7 +46,11 @@ if (!is_null($events['events'])) {
 						'type' => 'text',
 						'text' => 'LED1=OFF'
 				];
-				}	
+				}	*/
+				$messages = [
+					'type' => 'text',
+					'text' => 'STATUS LED ='.$status_led
+				];
 			}
 			else {
 				$messages = [
