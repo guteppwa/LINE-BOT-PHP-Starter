@@ -35,7 +35,7 @@ if (!is_null($events['events'])) {
 				];
 			}
 			else if($text=='STATUS'){
-				if ($status_led=1){
+				if ($status_led=='1'){
 					$messages = [
 						'type' => 'text',
 						'text' => 'LED1=ON'
