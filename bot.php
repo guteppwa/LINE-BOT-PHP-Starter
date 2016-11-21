@@ -22,12 +22,12 @@ if (!is_null($events['events'])) {
 			if($text=='ON'){
 				$status_led = 1;
 				$messages = [
-					'type' => 'text'
+					'type' => 'text',
 					'text' => 'LED1=ON'
 				];
 				if($text=='STATUS'){
 					$messages = [
-						'type' => 'text'
+						'type' => 'text',
 						'text' =>'STATUS_LED =' . $status_led
 					];
 				}
@@ -35,12 +35,12 @@ if (!is_null($events['events'])) {
 			else if($text=='OFF'){
 				$status_led = 0;
 				$messages = [
-					'type' => 'text'
+					'type' => 'text',
 					'text' =>'LED1=OFF'
 				];
 				if($text=='STATUS'){
 					$messages = [
-						'type' => 'text'
+						'type' => 'text',
 						'text' => 'STATUS_LED =' . $status_led
 					];
 				}
