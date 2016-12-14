@@ -3,7 +3,7 @@ $access_token = '/NSAPdEL4qw4NIYQvP0zxZfwRvv8Cq331Z9GUO6stPjb3VqzwwxE3MVFARvEMtn
 
 // Get POST body content
 $content = file_get_contents('php://input');
-$_path = "https://lineled.herokuapp.com/light.json";
+$_path = "https://lineled.herokuapp.com/light.txt";
 // Parse JSON
 $events = json_decode($content, true);
 // Validate parsed JSON data
@@ -25,7 +25,7 @@ if (!is_null($events['events'])) {
 					'type' => 'text',
 					'text' => 'LED1=ON'
 				];
-		$file = fopen($_path, "w") or die("can't open file");
+		$file = fopen($_path, "w");
 		fwrite($file, '{"light": "on"}');
 		fclose($file);
 	}
@@ -34,7 +34,7 @@ if (!is_null($events['events'])) {
 					'type' => 'text',
 					'text' =>'LED1=OFF'
 				];
-		$file = fopen($_path, "w") or die("can't open file");
+		$file = fopen($_path, "w");
 		fwrite($file, '{"light": "off"}');
 		fclose($file);
 			}
