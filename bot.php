@@ -3,7 +3,7 @@ $access_token = '/NSAPdEL4qw4NIYQvP0zxZfwRvv8Cq331Z9GUO6stPjb3VqzwwxE3MVFARvEMtn
 
 // Get POST body content
 $content = file_get_contents('php://input');
-//$_path = "https://lineled.herokuapp.com/light.json";
+$_path = "https://lineled.herokuapp.com/light.json";
 // Parse JSON
 $events = json_decode($content, true);
 // Validate parsed JSON data
