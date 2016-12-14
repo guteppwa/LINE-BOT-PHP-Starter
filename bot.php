@@ -23,7 +23,7 @@ if (!is_null($events['events'])) {
 			if($text=='ON'){
 				$messages = [
 					'type' => 'text',
-					'text' => 'LED1=ON'
+					'text' => 'LED1 = ON'
 				];
 		$file = fopen($_path, "w");
 		fwrite($file, '{"light": "on"}');
@@ -32,7 +32,7 @@ if (!is_null($events['events'])) {
 			else if($text=='OFF'){
 				$messages = [
 					'type' => 'text',
-					'text' =>'LED1=OFF'
+					'text' =>'LED1 = OFF'
 				];
 		$file = fopen($_path, "w");
 		fwrite($file, '{"light": "off"}');
