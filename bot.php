@@ -13,7 +13,7 @@ if (!is_null($events['events'])) {
 		// Reply only when message sent is in 'text' format
 		if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
 			// Get text sent
-			$text = $event['message']['text'];
+			$text = strtoupper($event['message']['text']);
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 
@@ -25,8 +25,9 @@ if (!is_null($events['events'])) {
 					'type' => 'text',
 					'text' => 'LED1 = ON'
 				];
-		$file = fopen($_path, "w");
-		fwrite($file, '{"light": "on"}');
+		$txt = 	'{"light": "on"}';	
+		$file = fopen($_path, 'w');
+		fwrite($file, $txt);
 		fclose($file);
 	}
 			else if($text=='OFF'){
@@ -34,8 +35,9 @@ if (!is_null($events['events'])) {
 					'type' => 'text',
 					'text' =>'LED1 = OFF'
 				];
-		$file = fopen($_path, "w");
-		fwrite($file, '{"light": "off"}');
+		$txt = 	'{"light": "off"}';
+		$file = fopen($_path, 'w');
+		fwrite($file,$txt );
 		fclose($file);
 			}
 			else {
