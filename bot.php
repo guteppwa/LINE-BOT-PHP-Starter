@@ -34,9 +34,9 @@ if (!is_null($events['events'])) {
 					'type' => 'text',
 					'text' =>'LED1=OFF'
 				];
-		/*$file = fopen($_path, "w") or die("can't open file");
+		$file = fopen($_path, "w") or die("can't open file");
 		fwrite($file, '{"light": "off"}');
-		fclose($file);*/
+		fclose($file);
 			}
 			else {
 				$messages = [
