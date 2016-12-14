@@ -68,7 +68,7 @@ if (!is_null($events['events'])) {
 	}
 }
 
-echo "OK";
-/*$file = ($_path,"r");
-echo fread($file,file_size($_path));
-fclose($file);*/
+//echo "OK";
+		$file = ($_path,"r");
+		echo fread($file,file_size($_path));
+		fclose($file);*/
